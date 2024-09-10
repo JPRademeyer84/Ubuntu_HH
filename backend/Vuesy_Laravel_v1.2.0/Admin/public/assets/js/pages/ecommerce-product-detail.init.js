@@ -1,0 +1,2 @@
+/*! For license information please see ecommerce-product-detail.init.js.LICENSE.txt */
+(()=>{var e;e=new Swiper(".product-nav-slider",{loop:!1,spaceBetween:10,slidesPerView:4,freeMode:!0,watchSlidesProgress:!0}),new Swiper(".product-thumbnail-slider",{loop:!1,spaceBetween:24,navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"},thumbs:{swiper:e}})})();
