@@ -1,12 +1,35 @@
+"use client";
+
+import React, { useState } from 'react';
+import { login } from '../../services/apiService';
 import { FaFacebookF, FaGooglePlusG, FaTwitter } from "react-icons/fa";
 import Social from "../social/Social";
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const result = await login(email, password);
+      if (result.error) {
+        setError(result.error);
+      } else {
+        console.log('Login successful:', result);
+      }
+    } catch (error) {
+      console.error('Login failed:', error);
+      setError('Login failed. Please try again.');
+    }
+  };
+
   return (
     <div
       className="modal fade"
       id="loginModal"
-      tabIndex="1"
+      tabIndex={1}
       role="dialog"
       aria-hidden="true"
     >
@@ -24,7 +47,7 @@ const Login = () => {
               </button>
               <h3 className="title">Welcome Back</h3>
               <div className="account-form-wrapper">
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="form-group">
                     <label>
                       Email <sup>*</sup>
@@ -35,18 +58,22 @@ const Login = () => {
                       id="login_name"
                       placeholder="Enter your Email"
                       required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <div className="form-group">
                     <label>
-                      password <sup>*</sup>
+                      Password <sup>*</sup>
                     </label>
                     <input
                       type="password"
                       name="login_pass"
                       id="login_pass"
-                      placeholder="password"
+                      placeholder="Password"
                       required
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
                   <div className="d-flex flex-wrap justify-content-between mt-2">
@@ -65,26 +92,24 @@ const Login = () => {
                       Forgot Password?
                     </a>
                   </div>
+                  {error && <p className="text-center text-danger">{error}</p>}
                   <div className="form-group text-center mt-5">
-                    <button className="cmn-btn">log in</button>
+                    <button type="submit" className="cmn-btn">Log In</button>
                   </div>
                 </form>
                 <p className="text-center mt-4">
-                  Don&#39;t have an account?{" "}
+                  Don&#39;t have an account?{' '}
                   <a
                     href="#0"
                     data-bs-toggle="modal"
                     data-bs-target="#signupModal"
                   >
-                    {" "}
                     Sign Up Now
                   </a>
                 </p>
                 <div className="divider">
                   <span>or</span>
                 </div>
-
-                {/* social links here */}
                 <Social
                   items={[
                     [FaFacebookF, "/"],
