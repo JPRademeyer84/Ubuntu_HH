@@ -1,2 +1,0 @@
-/*! For license information please see kanbanboard.init.js.LICENSE.txt */
-dragula([document.getElementById("todo-task"),document.getElementById("inprogress-task"),document.getElementById("hold-task"),document.getElementById("completed-task")]);
