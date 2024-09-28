@@ -10,8 +10,8 @@ import "../public/css/modal-video.scss";
 import "../styles/main.sass";
 
 export const metadata = {
-  title: "Rifa - Online Lotto & Lottery Reactjs + Nextjs Template",
-  description: "NextJs Template",
+  title: "Ubuntu Helping Hands",
+  description: "We support NPO and Crisis centers by selling Raffle Tickets and awarding amazing prices. We support communities to build the nation.",
 };
 
 export default function RootLayout({ children }) {
