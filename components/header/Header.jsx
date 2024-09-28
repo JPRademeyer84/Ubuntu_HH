@@ -4,45 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import cartData from "../../data/cartData";
-import { navbarData } from "../../public/data/navbarData";
 import tag from "/public/images/icon/btn/tag.png";
 import logo from "/public/images/logo.png";
 
-const languageDropdownData = [
-  {
-    value: "En",
-  },
-  {
-    value: "Bn",
-  },
-  {
-    value: "Hp",
-  },
-  {
-    value: "Frn",
-  },
-];
-
 const Header = () => {
-  const [open, setOpen] = useState("");
   const [windowHeight, setWindowHeight] = useState(0);
   const [show, setShow] = useState(false);
-  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
-  const [langDropdown, setLanguageDropdown] = useState(
-    languageDropdownData[0].value
-  );
-
-  const setLanguageDropdownValue = (value) => {
-    setLanguageDropdown(value);
-  };
-
-  const handleOpen = (e) => {
-    if (open !== e.target.text) {
-      setOpen(e.target.text);
-    } else {
-      setOpen("");
-    }
-  };
 
   const navBarTop = () => {
     if (window !== undefined) {
@@ -74,7 +41,7 @@ const Header = () => {
         <div className="container">
           <div className="row align-items-center gap-2 gap-md-0">
             <div className="col-sm-6">
-              <div className="left d-flex align-items-center">
+              <div className="left d-flex align-items-center gap-1">
                 <a
                   href="tel:65655655"
                   className="d-flex align-items-center gap-1"
@@ -82,37 +49,6 @@ const Header = () => {
                   <i className="las la-phone-volume"></i>
                   Customer Support
                 </a>
-                <div className="language">
-                  <i className="las la-globe-europe"></i>
-                  <div className=" relative">
-                    <div
-                      className="text-white language-dropdown-selected"
-                      onClick={() =>
-                        setLanguageDropdownOpen(!languageDropdownOpen)
-                      }
-                    >
-                      {langDropdown}
-                    </div>
-                    <ul
-                      className={`dropdown-container ${
-                        languageDropdownOpen ? "dropdown-container-open" : ""
-                      }`}
-                    >
-                      {languageDropdownData.map(({ value }) => (
-                        <li
-                          key={`${value}`}
-                          onClick={() => {
-                            setLanguageDropdownValue(value);
-                            setLanguageDropdownOpen(!languageDropdownOpen);
-                          }}
-                        >
-                          {value}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <i className="las la-angle-down"></i>
-                </div>
               </div>
             </div>
             <div className="col-sm-6">
@@ -150,69 +86,31 @@ const Header = () => {
               className="navbar-toggler ms-auto"
               type="button"
               onClick={() => setShow(!show)}
-              //data-bs-toggle="collapse"
-              // data-bs-target="#navbarContent"
-              // aria-controls="navbarContent"
-              //aria-expanded="false"
-              //aria-label="Toggle navigation"
             >
               <span className="menu-toggle"></span>
+              <span className="menu-toggle"></span>
+              <span className="menu-toggle"></span>
             </button>
-            <div
-              className={`collapse navbar-collapse ${show && "show"}`}
-              // id="navbarContent"
-            >
-              <ul className="navbar-nav main-menu ms-auto">
-                {navbarData.map(({ id, menuTitle, path, menuItems }) => {
-                  let isActive = menuItems?.some(
-                    (path) => pathName == path.menuItemPath
-                  );
-
-                  return menuItems ? (
-                    <li
-                      key={`${id}`}
-                      className={`menu_has_children ${
-                        open === `${menuTitle}` ? "open" : ""
-                      }`}
-                    >
-                      <div className="d-flex align-items-center">
-                        <Link
-                          href="/#"
-                          onClick={(e) => handleOpen(e)}
-                          className={` ${isActive ? "menu-active" : ""}`}
-                        >
-                          {menuTitle}
-                        </Link>
-                        <i className="las la-angle-down"></i>
-                      </div>
-                      <ul className="sub-menu">
-                        {menuItems.map(({ id, title, menuItemPath }) => (
-                          <li key={`${id}`}>
-                            <Link
-                              href={menuItemPath}
-                              onClick={() => setShow(false)}
-                              className={`${
-                                pathName === menuItemPath && "sub-menu-active"
-                              }`}
-                            >
-                              {title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </li>
-                  ) : (
-                    <li key={`${id}`}>
-                      <Link
-                        href={`${path}`}
-                        onClick={() => setShow(false)}
-                        className={`${pathName === path ? "menu-active" : ""}`}
-                      >
-                        {menuTitle}
-                      </Link>
-                    </li>
-                  );
-                })}
+            <div className={`collapse navbar-collapse ${show && "show"}`}>
+              <ul className="navbar-nav main-menu m-auto">
+                <li>
+                  <Link href="/">Home</Link>
+                </li>
+                <li>
+                  <Link href="/contest">Contest</Link>
+                </li>
+                <li>
+                  <Link href="/winner">Winners</Link>
+                </li>
+                <li>
+                  <Link href="/blog">Blog</Link>
+                </li>
+                <li>
+                  <Link href="/about">About Us</Link>
+                </li>
+                <li>
+                  <Link href="/contact">Contact</Link>
+                </li>
               </ul>
               <div className="nav-right">
                 <Link href="/contest" className="cmn-btn style--three btn--sm">
