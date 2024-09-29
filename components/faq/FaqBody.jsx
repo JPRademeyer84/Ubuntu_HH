@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from 'react';
 import AboutRifa from "./AboutRifa";
 import Banking from "./Banking";
