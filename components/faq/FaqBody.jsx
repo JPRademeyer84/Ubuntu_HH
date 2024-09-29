@@ -12,11 +12,10 @@ const FaqBody = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch FAQs from the API
   useEffect(() => {
     const fetchFaqs = async () => {
       try {
-        const response = await fetch('/api/faqs'); // API endpoint for fetching FAQs
+        const response = await fetch('/api/faqs'); 
         if (!response.ok) {
           throw new Error('Error fetching FAQs');
         }
@@ -42,8 +41,8 @@ const FaqBody = () => {
                 <span className="section-sub-title">You Have Questions</span>
                 <h2 className="section-title">WE HAVE ANSWERS</h2>
                 <p>
-                  Do not hesitate to send us an email if you can't find what
-                  you're looking for.
+                  Do not hesitate to send us an email if you can&apos;t find what
+                  you&apos;re looking for.
                 </p>
               </div>
               <ul
