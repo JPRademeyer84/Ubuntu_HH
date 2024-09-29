@@ -1,4 +1,4 @@
-import Contest from '../../models/Contest'; // The Contest model we just created
+import Contest from '../../models/Contest';
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {

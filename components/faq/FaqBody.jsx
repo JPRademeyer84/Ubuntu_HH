@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import AboutRifa from "./AboutRifa";
 import Banking from "./Banking";
 import ResultsAndAlerts from "./ResultsAndAlerts";
@@ -5,6 +6,30 @@ import Tickets from "./Tickets";
 import Winning from "./Winning";
 
 const FaqBody = () => {
+  const [faqs, setFaqs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Fetch FAQs from the API
+  useEffect(() => {
+    const fetchFaqs = async () => {
+      try {
+        const response = await fetch('/api/faqs'); // API endpoint for fetching FAQs
+        if (!response.ok) {
+          throw new Error('Error fetching FAQs');
+        }
+        const data = await response.json();
+        setFaqs(data);
+        setLoading(false);
+      } catch (error) {
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+
+    fetchFaqs();
+  }, []);
+
   return (
     <section className="pb-120 mt-minus-150">
       <div className="container">
@@ -15,8 +40,8 @@ const FaqBody = () => {
                 <span className="section-sub-title">You Have Questions</span>
                 <h2 className="section-title">WE HAVE ANSWERS</h2>
                 <p>
-                  Do not hesitate to send us an email if you can&#39;t find what
-                  you&#39;re looking for.
+                  Do not hesitate to send us an email if you can't find what
+                  you're looking for.
                 </p>
               </div>
               <ul
@@ -93,6 +118,8 @@ const FaqBody = () => {
             </div>
           </div>
         </div>
+
+        {/* Static Content */}
         <div className="row justify-content-center">
           <div className="col-lg-10">
             <div className="faq-body-wrapper">
@@ -143,6 +170,27 @@ const FaqBody = () => {
                   <AboutRifa />
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Dynamic FAQ Section */}
+        <div className="row justify-content-center mt-5">
+          <div className="col-lg-10">
+            <div className="dynamic-faq-section">
+              <h3>Dynamic FAQs</h3>
+              {loading && <p>Loading FAQs...</p>}
+              {error && <p>Error loading FAQs: {error}</p>}
+              {!loading && faqs.length > 0 ? (
+                <ul className="faq-list">
+                  {faqs.map((faq) => (
+                    <li key={faq.faq_id}>
+                      <h4>{faq.question}</h4>
+                      <p>{faq.answer}</p>
+                    </li>
+                  ))}
+                </ul>
+              ) : !loading && <p>No FAQs available at the moment.</p>}
             </div>
           </div>
         </div>

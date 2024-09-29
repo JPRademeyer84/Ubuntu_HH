@@ -1,5 +1,5 @@
 import { DataTypes } from 'sequelize';
-import sequelize from '../lib/db'; // Assuming your connection is here
+import sequelize from '../lib/sequelize';
 
 const Contest = sequelize.define('Contest', {
   contest_id: {
@@ -17,7 +17,7 @@ const Contest = sequelize.define('Contest', {
   },
   prize: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   start_date: {
     type: DataTypes.DATE,
@@ -27,6 +27,12 @@ const Contest = sequelize.define('Contest', {
     type: DataTypes.DATE,
     allowNull: true,
   },
+  created_at: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW,
+  },
+}, {
+  timestamps: false, // We are not using Sequelize timestamps because your table uses its own created_at field
 });
 
 export default Contest;
