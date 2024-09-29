@@ -1,7 +1,3 @@
-import Footer from "@/components/footer/Footer";
-import Login from "@/components/modal/Login";
-import SignUp from "@/components/modal/SignUp";
-import ScrollToTop from "@/components/scrollToTop/ScrollToTop";
 import { AppProvider } from "@/context/context";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Bootstrap from "../components/common/Bootstrap";
@@ -20,11 +16,6 @@ export default function RootLayout({ children }) {
       <Bootstrap>
         <AppProvider>
           <body>
-            {/* SignUp Modal */}
-            <SignUp />
-            {/* Login Modal */}
-            <Login />
-            {/* Header section */}
 
             {children}
 

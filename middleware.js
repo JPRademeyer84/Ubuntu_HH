@@ -2,22 +2,22 @@ import { NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
 
 export function middleware(req) {
-  const token = req.cookies.get('token'); // Get the token from the cookies
+  return NextResponse.next();
+
+  const token = req.headers.get('authorization')?.split(' ')[1];
 
   if (!token) {
-    return NextResponse.redirect(new URL('/login', req.url)); // Redirect to login if no token
+    return NextResponse.redirect(new URL('/', req.url));
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET); // Verify the JWT token
-    req.user = decoded; // Attach the decoded token to the request
+    jwt.verify(token, process.env.JWT_SECRET);
     return NextResponse.next();
-  } catch (err) {
-    return NextResponse.redirect(new URL('/login', req.url)); // Redirect to login on token failure
+  } catch (error) {
+    return NextResponse.redirect(new URL('/', req.url));
   }
 }
 
-// Specify routes to protect
-export const config = {
-  matcher: ['/dashboard/:path*'], // Add protected routes here (e.g., `/dashboard`)
-};
+// export const config = {
+//   matcher: ['/user-info'],
+// };

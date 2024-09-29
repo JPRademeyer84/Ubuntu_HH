@@ -1,11 +1,37 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import team_obj from "/public/images/elements/team-obj.png";
+import { useAuth } from "@/context/AuthContext";
+import { useRouter } from 'next/navigation';
+import { showToast } from '../Toast/Toast';
 
 const LeftSideMenu = () => {
+  const { setIsLoggedIn } = useAuth();
   const router = useRouter();
+
+  const handleLogout = async () => {
+    const token = localStorage.getItem('token');
+    localStorage.removeItem('token');
+    
+    try {
+      const response = await fetch('/api/logout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setIsLoggedIn(false); // Update login state
+        showToast(data.message); // Show logout success message
+        router.push('/'); // Redirect after logout
+      } 
+    } catch (error) {
+      console.error('Failed to logout:', error);
+    }
+  };
 
   return (
     <div className="col-lg-4">
@@ -40,10 +66,17 @@ const LeftSideMenu = () => {
               key={item}
               className={`${router.pathname === url && "active"} `}
             >
-              <Link href={url}>
+              {item === "Log Out" ? (
+                <Link onClick={handleLogout} href="#0">
                 {item}
                 {i === 0 ? <span className="badge">04</span> : ""}
               </Link>
+              ) : (
+                <Link href={url}>
+                  {item}
+                  {i === 0 ? <span className="badge">04</span> : ""}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

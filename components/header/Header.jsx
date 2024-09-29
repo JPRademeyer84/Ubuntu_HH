@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -6,10 +7,12 @@ import { useEffect, useState } from "react";
 import cartData from "../../data/cartData";
 import tag from "/public/images/icon/btn/tag.png";
 import logo from "/public/images/logo.png";
+import { useAuth } from "@/context/AuthContext";
 
-const Header = () => {
+const Header = ({openModal}) => {
   const [windowHeight, setWindowHeight] = useState(0);
   const [show, setShow] = useState(false);
+  const { isLoggedIn } = useAuth();
 
   const navBarTop = () => {
     if (window !== undefined) {
@@ -60,14 +63,19 @@ const Header = () => {
                     <span className="cart__num">{cartData.length}</span>
                   </Link>
                 </div>
-                <a
-                  href="#0"
-                  className="user__btn d-flex align-items-center justify-content-center"
-                  data-bs-toggle="modal"
-                  data-bs-target="#loginModal"
-                >
-                  <i className="las la-user"></i>
-                </a>
+                {isLoggedIn ? (
+                  <a href="/user-info" className="user__btn d-flex align-items-center justify-content-center">
+                    <i className="las la-user"></i>
+                  </a>
+                ) : (
+                  <a
+                    href="#0"
+                    className="user__btn d-flex align-items-center justify-content-center"
+                    onClick={openModal}
+                  >
+                    <i className="las la-user"></i>
+                  </a>
+                )}
               </div>
             </div>
           </div>

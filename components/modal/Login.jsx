@@ -1,13 +1,18 @@
 "use client";
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation'
 import { FaFacebookF, FaGooglePlusG, FaTwitter } from "react-icons/fa";
 import Social from "../social/Social";
+import { showToast } from '../Toast/Toast'
+import { useAuth } from "@/context/AuthContext";
 
-const Login = () => {
+const Login = ({ closeModal,openModel }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const router = useRouter();
+  const { setIsLoggedIn } = useAuth();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -19,27 +24,31 @@ const Login = () => {
         },
         body: JSON.stringify({ email, password }),
       });
+  
       const data = await response.json();
-
+  
       if (!response.ok) {
         setError(data.error || 'Login failed. Please try again.');
       } else {
-        console.log('Login successful:', data);
-        // Redirect or perform post-login action
+        localStorage.setItem('token', data.token);
+        setIsLoggedIn(true);
+        showToast(data.message);
+        closeModal();
+        router.push('/user-info');
       }
     } catch (error) {
       console.error('Login failed:', error);
       setError('Login failed. Please try again.');
     }
-  };
+  };  
 
   return (
-    <div className="modal fade" id="loginModal" tabIndex={1} role="dialog" aria-hidden="true">
+    <div className="modal fade show" role="dialog" aria-hidden="true" style={{ display: 'block' }}>
       <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div className="modal-content">
           <div className="modal-body">
             <div className="account-form-area">
-              <button type="button" className="close-btn" data-bs-dismiss="modal" aria-label="Close">
+              <button type="button" className="close-btn" onClick={closeModal} aria-label="Close">
                 <i className="las la-times"></i>
               </button>
               <h3 className="title">Welcome Back</h3>
@@ -90,7 +99,7 @@ const Login = () => {
                 </form>
                 <p className="text-center mt-4">
                   Don&#39;t have an account?{' '}
-                  <a href="#0" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up Now</a>
+                  <a href="#0" onClick={openModel}>Sign Up Now</a>
                 </p>
                 <div className="divider">
                   <span>or</span>

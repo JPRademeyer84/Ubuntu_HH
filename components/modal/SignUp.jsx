@@ -5,7 +5,7 @@ import { FaFacebookF, FaGooglePlusG, FaTwitter } from "react-icons/fa";
 import Social from "../social/Social";
 import { showToast } from '../Toast/Toast';
 
-const SignUp = () => {
+const SignUp = ({ closeModal,openModel }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -34,7 +34,9 @@ const SignUp = () => {
       const result = await res.json();
 
       if (res.ok) {
-        // Success message or redirect
+        showToast(result.message)
+        closeModal();
+        openModel();
       } else {
         setErrorMessage(result.error || 'An error occurred');
       }
@@ -45,11 +47,12 @@ const SignUp = () => {
 
   return (
     <div
-      className="modal fade"
+      className="modal fade show"
       id="signupModal"
       tabIndex="2"
       role="dialog"
       aria-hidden="true"
+      style={{ display: 'block' }}
     >
       <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div className="modal-content">
@@ -58,8 +61,7 @@ const SignUp = () => {
               <button
                 type="button"
                 className="close-btn"
-                data-bs-dismiss="modal"
-                aria-label="Close"
+                onClick={closeModal}
               >
                 <i className="las la-times"></i>
               </button>
@@ -118,8 +120,7 @@ const SignUp = () => {
                   Already have an account?{" "}
                   <a
                     href="#0"
-                    data-bs-toggle="modal"
-                    data-bs-target="#loginModal"
+                    onClick={openModel}
                   >
                     Login
                   </a>
