@@ -41,16 +41,17 @@ const Hero = () => {
           <div className="row justify-content-center justify-content-lg-start">
             <div className="col-lg-6 col-md-8">
               <div className="hero__content">
-                <div className="hero__subtitle">Contest FOR YOUR CHANCE to</div>
-                <h2 className="hero__title">big win</h2>
+                <div className="hero__subtitle">YOUR CHANCE WIN BIG &</div>
+                <h2 className="hero__title">GIVE BIGGER!</h2>
                 <p>
-                  Now&#39;s your chance to win a car! Check out the prestige
-                  cars you can win in our car prize draws. Will you be our next
-                  lucky winner?
+                Here’s your chance to change lives—yours and others. 
                 </p>
+                <p>By entering our raffle, you’re not just playing for a life-changing prize, but also helping uplift communities in need.</p>
+                <p>Each ticket brings hope and opportunity. </p>
+                <h2 className="hero__subtitle">Ready to make an impact?</h2>
                 <div className="hero__btn">
                   <Link href="/contest" className="cmn-btn">
-                    Participate Now
+                  JOIN NOW AND MAKE A DIFFERENCE!
                   </Link>
                   <button className="video-btn" onClick={() => setIsOpen(true)}>
                     <FaPlay />

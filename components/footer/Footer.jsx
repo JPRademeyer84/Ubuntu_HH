@@ -16,8 +16,8 @@ const Footer = () => {
           <div className="col-lg-12">
             <div className="subscribe-area">
               <div className="left">
-                <span className="subtitle">Subscribe to Sorko</span>
-                <h3 className="title">To Get Exclusive Benefits</h3>
+              <span className="subtitle">Subscribe to Our Newsletter</span>
+              <h3 className="title">To Get Exclusive News On Latest and Upcoming Benefits</h3>
               </div>
               <div className="right">
                 <form className="subscribe-form">
@@ -75,7 +75,7 @@ const Footer = () => {
         <div className="row py-5 align-items-center">
           <div className="col-lg-6">
             <p className="copy-right-text text-lg-start text-center mb-lg-0 mb-3">
-              Copyright © 2020.All Rights Reserved By <Link href="/">Rifa</Link>
+              Copyright © 2024. All Rights Reserved By <Link href="/">Ubuntu Helping Hands</Link>
             </p>
           </div>
           <div className="col-lg-6">

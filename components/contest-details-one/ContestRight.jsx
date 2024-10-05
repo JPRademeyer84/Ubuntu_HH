@@ -8,23 +8,23 @@ const ContestRight = () => {
 
   return (
     <div className="contest-cart__right">
-      <h4 className="subtitle">Enter now for a chance to win</h4>
-      <h3 className="contest-name">The Breeze Zodiac IX</h3>
-      <p>This competition has a maximum of 29994 entries.</p>
+      <h4 className="subtitle">Purchase a raffle ticket for a chance to win</h4>
+      <h3 className="contest-name">ISUZU KB 250 2013</h3>
+      <p>This competition has a maximum of 100000 entries.</p>
       <div className="contest-num">
         Contest no: <span>B2T</span>
       </div>
       <h4>Tickets Sold</h4>
       <div className="ticket-amount">
         <span className="left">0</span>
-        <span className="right">29994</span>
-        <div className="progressbar" data-perc="70%">
+        <span className="right">100000</span>
+        <div className="progressbar" data-perc="0%">
           <div className="bar"></div>
         </div>
-        <p>Only 12045 remaining!</p>
+        <p>Only 100000 tickets remaining!</p>
       </div>
       <div className="ticket-price">
-        <span className="amount">$4.99</span>
+        <span className="amount">R20.00</span>
         <small>Per ticket</small>
       </div>
       <div className="d-flex flex-wrap align-items-center mb-30">
@@ -57,7 +57,7 @@ const ContestRight = () => {
         </div>
         <div className="mt-sm-0 mt-3">
           <Link href="/lottery-details" className="cmn-btn style--three">
-            buy tickets
+            buy raffle tickets
           </Link>
         </div>
       </div>

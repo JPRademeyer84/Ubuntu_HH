@@ -108,10 +108,7 @@ const Header = ({openModal}) => {
                   <Link href="/contest">Contest</Link>
                 </li>
                 <li>
-                  <Link href="/winner">Winners</Link>
-                </li>
-                <li>
-                  <Link href="/blog">Blog</Link>
+                  <Link href="/blog">Partners</Link>
                 </li>
                 <li>
                   <Link href="/about">About Us</Link>

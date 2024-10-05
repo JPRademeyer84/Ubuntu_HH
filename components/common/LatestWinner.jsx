@@ -33,7 +33,7 @@ const LatestWinner = () => {
           <div className="col-lg-8">
             <div className="section-header text-center">
               <span className="section-sub-title">
-                Meet the latest winners from your favorite contest
+                Meet the latest winners from your favorite contest d
               </span>
               <h2 className="section-title">Latest Winners</h2>
               <p>

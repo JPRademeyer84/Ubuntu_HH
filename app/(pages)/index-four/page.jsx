@@ -20,9 +20,9 @@ const page = () => {
 
       {/* Current contest section */}
       <CurrentContest />
-
+{/* 
       {/* Latest winner section */}
-      <LatestWinner />
+      <LatestWinner /> */}
 
       {/* Testimonial section */}
       <Testimonial />

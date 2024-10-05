@@ -19,10 +19,10 @@ const Features = () => {
                         <Image src={feature_1} alt="image" />
                       </div>
                       <div className="feature-card__content">
-                        <h3 className="feature-title">Safe Service</h3>
+                        <h3 className="feature-title">Safe & Transparent Service
+                        </h3>
                         <p>
-                          Nulla ultricies in nulla ac efficitur. In vel neque
-                          arcu. Donec quis
+                        Your contributions are handled with care. Our transparent processes ensure every donation and entry directly supports community upliftment and positive change.
                         </p>
                       </div>
                     </div>
@@ -33,10 +33,9 @@ const Features = () => {
                         <Image src={feature_3} alt="image" />
                       </div>
                       <div className="feature-card__content">
-                        <h3 className="feature-title">Network</h3>
+                        <h3 className="feature-title">Community Network</h3>
                         <p>
-                          Nulla ultricies in nulla ac efficitur. In vel neque
-                          arcu. Donec quis
+                        Join a vast network of like-minded individuals committed to supporting meaningful causes across South Africa. Together, we make an even greater impact.
                         </p>
                       </div>
                     </div>
@@ -53,8 +52,7 @@ const Features = () => {
                       <div className="feature-card__content">
                         <h3 className="feature-title">Security</h3>
                         <p>
-                          Nulla ultricies in nulla ac efficitur. In vel neque
-                          arcu. Donec quis
+                        We prioritize the security of your information and transactions, ensuring your participation is safe and your data remains protected.
                         </p>
                       </div>
                     </div>
@@ -65,10 +63,9 @@ const Features = () => {
                         <Image src={feature_4} alt="image" />
                       </div>
                       <div className="feature-card__content">
-                        <h3 className="feature-title">Support</h3>
+                        <h3 className="feature-title">Dedicated Support</h3>
                         <p>
-                          Nulla ultricies in nulla ac efficitur. In vel neque
-                          arcu. Donec quis
+                        Our team is always here for you. Whether it’s answering questions or guiding you through the process, we’re dedicated to providing the best support.
                         </p>
                       </div>
                     </div>
@@ -82,17 +79,8 @@ const Features = () => {
               <span className="section-sub-title">An Exhaustive list of</span>
               <h2 className="section-title">Our features.</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                pretium, elit quis vehicula interdum, sem metus iaculis sapien,
-                sed bibendum lectus augue eu metus.
+              Discover the powerful features that make Ubuntu Helping Hands Foundation a unique platform for community transformation.
               </p>
-              <a
-                href="#0"
-                className="d-flex align-items-center mt-3 justify-content-lg-start justify-content-center"
-              >
-                Show all features
-                <i className="las la-angle-double-right text-danger"></i>
-              </a>
             </div>
           </div>
         </div>

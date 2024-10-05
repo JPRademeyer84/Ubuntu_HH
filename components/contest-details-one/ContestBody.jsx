@@ -15,7 +15,7 @@ const ContestBody = () => {
               <p className="mb-2">This competition ends in:</p>
               <div className="clock">
                 <Countdown
-                  date={Date.now() + 1000000000}
+                  date={Date.now() + 1600000000}
                   renderer={RendererCountdown}
                 />
               </div>
@@ -84,16 +84,17 @@ const ContestBody = () => {
                   aria-labelledby="details-tab"
                 >
                   <div className="content-block">
-                    <h3 className="title">Competition Details</h3>
+                    <h3 className="title">Eligibility:</h3>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Duis sed ex eget mi sollicitudin consequat. Sed rhoncus
-                      ligula vel justo dignissim aliquam. Maecenas non est vitae
-                      ipsum luctus feugiat. Fusce purus nunc, sodales at
-                      condimentum sed, ullamcorper a nulla. Nam justo est,
-                      venenatis quis tellus in, volutpat eleifend nunc.
-                      Vestibulum congue laoreet mi non interdum. Ut ut dapibus
-                      tellus.
+                    The competition is open to residents of South Africa, aged 18 years or older. You must provide a valid South African ID or passport.
+                    </p>
+                    <h3 className="title">Winner Announcement:</h3>
+                    <p>
+                    Winners will be announced on [Insert Date] via live stream on our official website and social media platforms.
+                    </p>
+                    <h3 className="title">Terms and Conditions:</h3>
+                    <p>
+                    For full terms and conditions, visit [Insert Link to Terms].
                     </p>
                   </div>
                 </div>

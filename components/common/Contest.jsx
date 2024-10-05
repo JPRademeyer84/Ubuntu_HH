@@ -30,12 +30,11 @@ const Contest = () => {
           <div className="col-lg-8">
             <div className="section-header text-center">
               <span className="section-sub-title">
-                Try your chance at winning
+              DREAM BIG, WIN BIGGER
               </span>
               <h2 className="section-title">Current Contest</h2>
               <p>
-                Participants buy tickets and lots are drawn to determine the
-                winners.
+              Here’s your chance to win and make a difference! Choose the prize that inspires you, and with each entry, you’re contributing to vital community-driven projects that uplift lives. Will you be the one to take home an incredible prize while changing lives along the way?
               </p>
             </div>
           </div>
@@ -48,7 +47,7 @@ const Contest = () => {
               id="myTab"
               role="tablist"
             >
-              <li className="nav-item" role="presentation">
+              {/* <li className="nav-item" role="presentation">
                 <button
                   className="cmn-btn style--two d-flex align-items-center active"
                   id="home-tab"
@@ -65,8 +64,8 @@ const Contest = () => {
                   </span>
                   Dream Car
                 </button>
-              </li>
-              <li className="nav-item" role="presentation">
+              </li> */}
+              {/* <li className="nav-item" role="presentation">
                 <button
                   className="cmn-btn style--two d-flex align-items-center"
                   id="profile-tab"
@@ -83,7 +82,7 @@ const Contest = () => {
                   </span>
                   All lifestyle
                 </button>
-              </li>
+              </li> */}
             </ul>
             <div className="tab-content" id="myTabContent">
               <div

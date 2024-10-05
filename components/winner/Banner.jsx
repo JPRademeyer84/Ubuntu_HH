@@ -11,9 +11,7 @@ const Banner = () => {
         <div className="row justify-content-center">
           <div className="col-lg-8">
             <div className="inner-page-content">
-              <h2 className="title">Never miss a draw!</h2>
-              <p>Easy way to buy tickets and win your dream car</p>
-              <p>many others anytime, anywhere</p>
+              <h2 className="title">Winners to Be announced</h2>
             </div>
           </div>
         </div>

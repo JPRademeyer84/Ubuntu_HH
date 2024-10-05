@@ -8,20 +8,19 @@ const Feature = () => {
     <section className="pb-120">
       <div className="container">
         <div className="row mb-none-30 justify-content-center">
-          <div className="col-lg-4 col-sm-6 mb-30">
+          {/* <div className="col-lg-4 col-sm-6 mb-30">
             <div className="icon-item2">
               <div className="icon-item2__icon">
                 <Image src={contest_feature_1} alt="contest feature 1" />
               </div>
               <div className="icon-item2__content">
                 <h3 className="title">Secure Checkout</h3>
-                <p>
-                  Pay with the world’s most popular and secure payment methods.
+                <p>h
                 </p>
               </div>
             </div>
-          </div>
-          <div className="col-lg-4 col-sm-6 mb-30">
+          </div> */}
+          {/* <div className="col-lg-4 col-sm-6 mb-30">
             <div className="icon-item2">
               <div className="icon-item2__icon">
                 <Image src={contest_feature_2} alt="contest feature 2" />
@@ -31,8 +30,8 @@ const Feature = () => {
                 <p>We offer competitive prices for every lottery tickets</p>
               </div>
             </div>
-          </div>
-          <div className="col-lg-4 col-sm-6 mb-30">
+          </div> */}
+          {/* <div className="col-lg-4 col-sm-6 mb-30">
             <div className="icon-item2">
               <div className="icon-item2__icon">
                 <Image src={contest_feature_3} alt="contest feature 3" />
@@ -44,7 +43,7 @@ const Feature = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

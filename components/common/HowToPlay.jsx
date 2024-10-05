@@ -16,7 +16,7 @@ const HowToPlay = () => {
             <div className="section-header">
               <span className="section-sub-title">Need to know about</span>
               <h2 className="section-title">How To Play</h2>
-              <p>Follow these 3 easy steps! </p>
+              <p>Follow these 3 simple steps to make a meaningful impact and seize the opportunity for an amazing prize! </p>
             </div>
           </div>
         </div>
@@ -28,8 +28,8 @@ const HowToPlay = () => {
                 <span className="play-card__number">01</span>
               </div>
               <div className="play-card__content">
-                <h3 className="play-card__title">Choose</h3>
-                <p>Register to RIFA & Choose your contest</p>
+                <h3 className="play-card__title">Register your account and complete KYC</h3>
+                <p>Sign up and choose the cause you want to support. Your contribution helps empower communities and uplift lives.</p>
               </div>
             </div>
           </div>
@@ -40,8 +40,8 @@ const HowToPlay = () => {
                 <span className="play-card__number">02</span>
               </div>
               <div className="play-card__content">
-                <h3 className="play-card__title">buy</h3>
-                <p>Pick Your Numbers & Complete your Purchase</p>
+                <h3 className="play-card__title">Choose Your Prize</h3>
+                <p>Choose which prize you want to enter for and finalize your contribution. Every entry directly supports life-changing initiatives.</p>
               </div>
             </div>
           </div>
@@ -53,7 +53,7 @@ const HowToPlay = () => {
               </div>
               <div className="play-card__content">
                 <h3 className="play-card__title">Win</h3>
-                <p>Start Dreaming, you&#39;re almost there</p>
+                <p>Get ready! You're one step closer to winning an incredible prize while making a lasting impact on communities in need.</p>
               </div>
             </div>
           </div>

@@ -12,13 +12,14 @@ const VehicleOverview = () => {
       <div className="content-block">
         <h3 className="title">Vehicle Overview</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ex
-          eget mi sollicitudin consequat. Sed rhoncus ligula vel justo dignissim
-          aliquam. Maecenas non est vitae ipsum luctus feugiat. Fusce purus
-          nunc, sodales at condimentum sed, ullamcorper a nulla. Nam justo est,
-          venenatis quis tellus in, volutpat eleifend nunc. Vestibulum congue
-          laoreet mi non interdum. Ut ut dapibus tellus.
-        </p>
+                    The Isuzu KB250 2013 model is a reliable and rugged bakkie (pickup truck) that is popular for both work and recreational use. It features a 2.5-liter turbo diesel engine, known for its fuel efficiency and durability. This model delivers about 85 kW of power and 280 Nm of torque, making it ideal for towing and carrying heavy loads.
+                    </p>
+                    <p>
+                    The Isuzu KB250 also boasts a solid off-road capability, with a high ground clearance and a dependable suspension system, ensuring a smooth ride on rough terrain. Its interior is practical, with essential features such as air conditioning and radio/CD, designed for comfort while maintaining its functional purpose. 
+                    </p>
+                    <p>
+                    This model is widely recognized for its longevity, low maintenance costs, and resale value, making it a favorite among businesses and individual users alike.
+                    </p>
       </div>
       <div className="content-block">
         <h3 className="title">Specifications</h3>
@@ -29,8 +30,8 @@ const VehicleOverview = () => {
                 <Image src={specification_1} alt="specification_1" />
               </div>
               <div className="icon-item__content">
-                <p>0-62mph</p>
-                <span>4.0 secs</span>
+                <p>Acceleration (0-100 km/h)</p>
+                <span>14.2 secs</span>
               </div>
             </div>
           </div>
@@ -41,7 +42,7 @@ const VehicleOverview = () => {
               </div>
               <div className="icon-item__content">
                 <p>Top Speed</p>
-                <span>181 mph</span>
+                <span>160 km/h</span>
               </div>
             </div>
           </div>
@@ -52,7 +53,7 @@ const VehicleOverview = () => {
               </div>
               <div className="icon-item__content">
                 <p>Power</p>
-                <span>542 bhp</span>
+                <span>85 kW</span>
               </div>
             </div>
           </div>
@@ -63,7 +64,7 @@ const VehicleOverview = () => {
               </div>
               <div className="icon-item__content">
                 <p>Displacement</p>
-                <span>4.0ltr</span>
+                <span>2.5 L</span>
               </div>
             </div>
           </div>
@@ -73,8 +74,8 @@ const VehicleOverview = () => {
                 <Image src={specification_5} alt="specification_5" />
               </div>
               <div className="icon-item__content">
-                <p>bhp</p>
-                <span>691</span>
+                <p>Torque</p>
+                <span>280 Nm</span>
               </div>
             </div>
           </div>
@@ -85,7 +86,7 @@ const VehicleOverview = () => {
               </div>
               <div className="icon-item__content">
                 <p>Year</p>
-                <span>2019</span>
+                <span>2013</span>
               </div>
             </div>
           </div>

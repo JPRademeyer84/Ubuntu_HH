@@ -20,14 +20,6 @@ const page = () => {
       {/* Contest section */}
       <Contest />
 
-      {/* Winner section */}
-      <Winner />
-
-      {/*Latest Winner section */}
-      <LatestWinner />
-
-      {/*Overview section */}
-      <Overview />
 
       {/*Features section */}
       <Features />

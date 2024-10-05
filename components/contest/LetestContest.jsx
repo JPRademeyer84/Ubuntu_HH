@@ -28,7 +28,7 @@ const LetestContest = () => {
             <div className="contest-wrapper">
               <div className="contest-wrapper__header pt-120">
                 <h2 className="contest-wrapper__title">Latest Contest</h2>
-                <ul
+                {/* <ul
                   className="nav nav-tabs winner-tab-nav"
                   id="myTab"
                   role="tablist"
@@ -113,10 +113,10 @@ const LetestContest = () => {
                       <span>Money</span>
                     </button>
                   </li>
-                </ul>
+                </ul> */}
               </div>
               <div className="contest-wrapper__body">
-                <div className="row contest-filter-wrapper justify-content-center mt-30 mb-none-30">
+                {/* <div className="row contest-filter-wrapper justify-content-center mt-30 mb-none-30">
                   <div className="col-lg-2 col-sm-6 mb-30">
                     <div className="select border border-dark rounded-pill">
                       <select className="border-0 rounded-pill">
@@ -185,7 +185,7 @@ const LetestContest = () => {
                       </button>
                     </form>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="tab-content mt-50" id="myTabContent">
                   <div
